@@ -13,7 +13,7 @@
 
 # Lab
 ## About team task management (screenshot/description)
-![Scheme](Images/taskmanager.png)
+![alt text](https://github.com/Zhenyettta/basedGame/blob/main/Images/taskManager.png)
 
 *To Do:* список запланованих features.
 
