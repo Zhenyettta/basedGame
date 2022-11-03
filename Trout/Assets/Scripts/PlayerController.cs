@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Швидкість руху персонажа")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     public float speed = 7f;
 
-    [Header("Швидкість бігу персонажа")]
+    [Header("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     public float ranSpeed = 20f;
 
-    [Header("Сила стрибка")]
+    [Header("пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ")]
     public float jumpPower = 200f;
 
-    [Header("Ми на землі?")]
+    [Header("пїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅ?")]
     public bool ground;
 
     public Rigidbody rb;

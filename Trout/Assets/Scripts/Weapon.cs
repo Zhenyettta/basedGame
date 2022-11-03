@@ -10,18 +10,21 @@ public class Weapon : MonoBehaviour
     public Transform weaponParent;
 
     private GameObject currentWeapon;
+    #endregion
 
+    #region MonoBehaviour Callbacks
     void Start()
     {
         
     }
-    #endregion
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) Equip(0);
     }
+    #endregion
 
+    #region Private Methods
     void Equip (int p_ind)
     {
         if (currentWeapon != null) Destroy(currentWeapon);
@@ -32,4 +35,5 @@ public class Weapon : MonoBehaviour
 
         currentWeapon = t_newWeapon;
     }
+    #endregion
 }
