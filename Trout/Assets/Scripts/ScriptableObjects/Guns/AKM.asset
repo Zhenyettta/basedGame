@@ -14,4 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   weapon_name: AKM
   firerate: 9000
+  aimSpeed: 7
   prefab: {fileID: 6091740597014241321, guid: e73a2e3ecc4c51d40a98ead6d9137e5b, type: 3}

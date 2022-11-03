@@ -2064,7 +2064,7 @@ GameObject:
   - component: {fileID: 180596472}
   - component: {fileID: 180596471}
   - component: {fileID: 180596470}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11754,7 +11754,7 @@ GameObject:
   - component: {fileID: 982658740}
   - component: {fileID: 982658741}
   - component: {fileID: 982658742}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -11890,6 +11890,10 @@ MonoBehaviour:
   loadout:
   - {fileID: 11400000, guid: fb6f31a623f458540bb396e5c2300219, type: 2}
   weaponParent: {fileID: 1742390073}
+  bulletholePrefab: {fileID: 1336283582768725363, guid: 000fd738f288af6448e8989eef61db72, type: 3}
+  canBeShot:
+    serializedVersion: 2
+    m_Bits: 55
 --- !u!114 &982658742
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20638,7 +20642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1742390073}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20943,7 +20947,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1776689557}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cameras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
