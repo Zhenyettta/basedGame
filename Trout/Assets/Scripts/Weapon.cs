@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    #region Variables
+
     public Gun[] loadout;
     public Transform weaponParent;
 
@@ -13,8 +15,8 @@ public class Weapon : MonoBehaviour
     {
         
     }
+    #endregion
 
-   
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1)) Equip(0);

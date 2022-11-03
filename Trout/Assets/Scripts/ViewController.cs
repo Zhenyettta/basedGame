@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ViewController : MonoBehaviour
 {
-    //private float mouseX;
-    //private float mouseY;
-
+    #region Variables
 
     public static bool cursorLocked = true;
 
@@ -18,7 +16,9 @@ public class ViewController : MonoBehaviour
     public float maxAngle;
 
     private Quaternion camCenter;
-    
+
+    #endregion 
+
     void Start()
     {
         //Cursor.lockState = CursorLockMode.Locked;

@@ -11837,8 +11837,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1742390073}
   - {fileID: 1776689557}
+  - {fileID: 1742390073}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -11904,6 +11904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 982658738}
   cams: {fileID: 180596472}
+  weapon: {fileID: 1742390073}
   sensitivityMouse: 300
   maxAngle: 25
 --- !u!1001 &1010457100
@@ -20651,13 +20652,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1742390072}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.3119991, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 982658738}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1744500668
 PrefabInstance:
@@ -20963,7 +20964,7 @@ Transform:
   m_Children:
   - {fileID: 180596472}
   m_Father: {fileID: 982658738}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1777295814
 PrefabInstance:
