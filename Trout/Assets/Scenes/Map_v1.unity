@@ -21587,7 +21587,7 @@ GameObject:
   - component: {fileID: 1805074375}
   m_Layer: 0
   m_Name: Zombie
-  m_TagString: Untagged
+  m_TagString: Zombie
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -21673,6 +21673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 982658738}
+  max_health: 500
 --- !u!95 &1805074375
 Animator:
   serializedVersion: 4

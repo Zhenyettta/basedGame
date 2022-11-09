@@ -7,10 +7,14 @@ public class ZombieController : MonoBehaviour
 {
     private NavMeshAgent agent = null;
     [SerializeField] private Transform target;
+    public int max_health;
+
+    private int current_health;
 
     private void Start()
     {
         GetReferences();
+        current_health = max_health;
 
     }
     private void Update()
@@ -35,5 +39,15 @@ public class ZombieController : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
 
+    }
+
+    public void TakeDamage(int damage)
+    {
+        current_health -= damage; 
+
+        if(current_health < 0)
+        {
+            print("Zombie's DEAD");
+        }
     }
 }
