@@ -1,35 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("Walk speed")]
     public float speed = 3f;
 
-    [Header("Run speed")]
     public float ranSpeed = 5f;
 
-    [Header("Jump power")]
     public float jumpPower = 200f;
+
     private float jumpControle = 0.75f;
+
+    public static int health = 100;
+
+    public TextMeshProUGUI playerHPText;
 
     [Header("is on the Ground")]
     public bool ground;
     public bool readyToJump = true;
+    public static bool isGameOver;
+
+
+    private int current_health;
 
     public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-
+        isGameOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        playerHPText.text = "+" + current_health;
         GetImput();
+        if(isGameOver)
+        {
+            //exit
+        }
     }
+
+    #region Movement
 
     private void GetImput()
     {
@@ -81,6 +95,7 @@ public class PlayerController : MonoBehaviour
             {
                 transform.localPosition += transform.right * speed * Time.deltaTime;
             }
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space))
@@ -115,4 +130,23 @@ public class PlayerController : MonoBehaviour
     {
         readyToJump = true;
     }
+    #endregion
+
+    #region Health update
+
+
+    public void TakeDamage(int damage)
+    {
+        current_health -= damage;
+        //sound
+
+        if (current_health <= 0)
+        {
+            print("My DEAR you are Dead");
+            isGameOver = true;
+        }
+    }
+    #endregion
+
+
 }

@@ -7,9 +7,10 @@ public class ZombieController : MonoBehaviour
 {
     private NavMeshAgent agent = null;
     [SerializeField] private Transform target;
-    public int max_health;
 
+    public int max_health;
     private int current_health;
+    public int damage;
 
     private void Start()
     {
@@ -20,6 +21,7 @@ public class ZombieController : MonoBehaviour
     private void Update()
     {
         MoveToTarget();
+        DealDamage();
     }
     private void MoveToTarget()
     {
@@ -52,4 +54,16 @@ public class ZombieController : MonoBehaviour
             Destroy(transform.root.gameObject);
         }
     }
+
+    public void DealDamage()
+    {
+        if (Vector3.Distance(target.position, transform.position) <= 2)
+        {
+            print("hit");
+
+            PlayerController.TakeDamage(damage);
+
+        }
+    }
+
 }
