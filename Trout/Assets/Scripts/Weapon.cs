@@ -74,6 +74,13 @@ public class Weapon : MonoBehaviour
         {
             GameObject t_newHole = Instantiate(bulletholePrefab, t_hit.point + t_hit.normal * 0.001f, Quaternion.identity) as GameObject;
             t_newHole.transform.LookAt(t_hit.point + t_hit.normal);
+
+            GameObject hit_obj = t_hit.collider.gameObject;
+
+            if (hit_obj.tag == "Zombie")
+            {
+                hit_obj.SendMessage("TakeDamage", loadout[currentIndex].damage);
+            }
         }
     }
 
