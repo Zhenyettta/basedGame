@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
         playerHPText.text = "+" + current_health;
         GetImput();
         if(isGameOver)
