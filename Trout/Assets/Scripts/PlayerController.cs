@@ -26,13 +26,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        current_health = health;
         isGameOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-
         GetImput();
         if(isGameOver)
         {
@@ -144,6 +144,23 @@ public class PlayerController : MonoBehaviour
         }
     }
     #endregion
+
+/*    float damageTime = 1.0f;
+
+    float currentDamageTime;
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Zombie")
+        { 
+            currentDamageTime += Time.deltaTime;
+            if (currentDamageTime > damageTime)
+            {
+                current_health -= 10; ;
+                currentDamageTime = 0.0f;
+            }
+        }
+    }*/
 
 
 }
