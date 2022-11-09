@@ -4,32 +4,36 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [Header("�������� ���� ���������")]
-    public float speed = 7f;
+    [Header("Walk speed")]
+    public float speed = 3f;
 
-    [Header("�������� ��� ���������")]
-    public float ranSpeed = 20f;
+    [Header("Run speed")]
+    public float ranSpeed = 5f;
 
-    [Header("���� �������")]
+    [Header("Jump power")]
     public float jumpPower = 200f;
+    private float jumpControle = 0.75f;
 
-    [Header("�� �� ����?")]
+    [Header("is on the Ground")]
     public bool ground;
+    public bool readyToJump = true;
 
     public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        GetImput(); 
+        GetImput();
     }
+
     private void GetImput()
     {
+
         if (Input.GetKey(KeyCode.W))
         {
             if (Input.GetKey(KeyCode.LeftShift))
@@ -40,8 +44,9 @@ public class PlayerController : MonoBehaviour
             {
                 transform.localPosition += transform.forward * speed * Time.deltaTime;
             }
-            
+
         }
+
         if (Input.GetKey(KeyCode.S))
         {
             if (Input.GetKey(KeyCode.LeftShift))
@@ -53,6 +58,7 @@ public class PlayerController : MonoBehaviour
                 transform.localPosition += -transform.forward * speed * Time.deltaTime;
             }
         }
+
         if (Input.GetKey(KeyCode.A))
         {
             if (Input.GetKey(KeyCode.LeftShift))
@@ -64,6 +70,7 @@ public class PlayerController : MonoBehaviour
                 transform.localPosition += -transform.right * speed * Time.deltaTime;
             }
         }
+
         if (Input.GetKey(KeyCode.D))
         {
             if (Input.GetKey(KeyCode.LeftShift))
@@ -75,27 +82,37 @@ public class PlayerController : MonoBehaviour
                 transform.localPosition += transform.right * speed * Time.deltaTime;
             }
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(ground == true)
+            if (ground == true && readyToJump)
             {
+                readyToJump = false;
+
                 rb.AddForce(transform.up * jumpPower);
+
+
+                Invoke(nameof(ResetJump), jumpControle);
             }
         }
     }
 
+
+
     private void OnCollisionEnter(Collision collision)
-    {
-        if(collision.gameObject.tag == "Ground")
-        {
-            ground = true;
-        }
-    }
-    private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag == "Ground")
         {
+            ground = true;
+        }
+        else
+        {
             ground = false;
         }
+    }
+
+    private void ResetJump()
+    {
+        readyToJump = true;
     }
 }
