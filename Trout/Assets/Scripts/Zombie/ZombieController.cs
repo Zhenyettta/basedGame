@@ -44,10 +44,12 @@ public class ZombieController : MonoBehaviour
     public void TakeDamage(int damage)
     {
         current_health -= damage; 
+        //sound
 
         if(current_health < 0)
         {
             print("Zombie's DEAD");
+            Destroy(transform.root.gameObject);
         }
     }
 }
