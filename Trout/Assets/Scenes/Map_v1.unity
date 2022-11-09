@@ -11864,10 +11864,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a404fd443ef1ea044871035d300aab5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 7
-  ranSpeed: 15
-  jumpPower: 200
+  speed: 4
+  ranSpeed: 6
+  jumpPower: 150
   ground: 1
+  readyToJump: 1
   rb: {fileID: 982658740}
 --- !u!54 &982658740
 Rigidbody:
