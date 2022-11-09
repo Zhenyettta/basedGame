@@ -5,6 +5,7 @@ Logs/
 [Bb]uilds/
 [Ll]ibrary/
 [Uu]ser[Ss]ettings/
+.idea/
 Assets/AssetStoreTools*
 
 # Visual Studio cache directory
