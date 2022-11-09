@@ -61,11 +61,9 @@ public class ZombieController : MonoBehaviour
         {
             print("hit");
 
-<<<<<<< Updated upstream
-            PlayerController.TakeDamage(damage);
-=======
             /*PlayerController.TakeDamage(damage);*/
->>>>>>> Stashed changes
+
+
 
         }
     }

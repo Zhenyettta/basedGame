@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -14,8 +13,6 @@ public class PlayerController : MonoBehaviour
     private float jumpControle = 0.75f;
 
     public static int health = 100;
-
-    public TextMeshProUGUI playerHPText;
 
     [Header("is on the Ground")]
     public bool ground;
@@ -35,11 +32,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
-        playerHPText.text = "+" + current_health;
         GetImput();
         if(isGameOver)
         {
