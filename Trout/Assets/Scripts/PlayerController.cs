@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -15,8 +14,6 @@ public class PlayerController : MonoBehaviour
 
     public static int health = 100;
 
-    public TextMeshProUGUI playerHPText;
-
     [Header("is on the Ground")]
     public bool ground;
     public bool readyToJump = true;
@@ -29,13 +26,13 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        current_health = health;
         isGameOver = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        playerHPText.text = "+" + current_health;
         GetImput();
         if(isGameOver)
         {
@@ -147,6 +144,23 @@ public class PlayerController : MonoBehaviour
         }
     }
     #endregion
+
+/*    float damageTime = 1.0f;
+
+    float currentDamageTime;
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.tag == "Zombie")
+        { 
+            currentDamageTime += Time.deltaTime;
+            if (currentDamageTime > damageTime)
+            {
+                current_health -= 10; ;
+                currentDamageTime = 0.0f;
+            }
+        }
+    }*/
 
 
 }
