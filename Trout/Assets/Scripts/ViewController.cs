@@ -36,7 +36,7 @@ public class ViewController : MonoBehaviour
 
     void SetY()
     {
-        float t_input = Input.GetAxis("Mouse Y") * sensitivityMouse * Time.deltaTime;
+        float t_input = Input.GetAxis("Mouse Y") * sensitivityMouse * Time.fixedDeltaTime;
         Quaternion t_adj = Quaternion.AngleAxis(t_input, -Vector3.right);
         Quaternion t_delta = cams.localRotation * t_adj;
 
@@ -50,7 +50,7 @@ public class ViewController : MonoBehaviour
 
     void SetX()
     {
-        float t_input = Input.GetAxis("Mouse X") * sensitivityMouse * Time.deltaTime;
+        float t_input = Input.GetAxis("Mouse X") * sensitivityMouse * Time.fixedDeltaTime;
         Quaternion t_adj = Quaternion.AngleAxis(t_input, Vector3.up);
         Quaternion t_delta = player.localRotation * t_adj;
         player.localRotation = t_delta;

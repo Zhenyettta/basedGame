@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,10 +13,16 @@ public class ZombieController : MonoBehaviour
     private int current_health;
     public int damage;
 
+
+    PlayerController pcr = new PlayerController();
+
     private void Start()
     {
         GetReferences();
         current_health = max_health;
+    
+
+       
 
     }
     private void Update()
@@ -59,7 +66,9 @@ public class ZombieController : MonoBehaviour
     {
         if (Vector3.Distance(target.position, transform.position) <= 2)
         {
-            print("Hit");
+
+            pcr.TakeDamage(1);
+           
         }
     }
 }
