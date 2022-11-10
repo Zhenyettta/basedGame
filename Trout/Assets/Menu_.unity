@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18226868, g: 0.22797519, b: 0.30734095, a: 1}
+  m_IndirectSpecularColor: {r: 0.18226847, g: 0.22797474, b: 0.30734015, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1228,6 +1228,7 @@ GameObject:
   - component: {fileID: 1288423937}
   - component: {fileID: 1288423936}
   - component: {fileID: 1288423939}
+  - component: {fileID: 1288423938}
   m_Layer: 5
   m_Name: LevlMenu
   m_TagString: Untagged
@@ -1297,7 +1298,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1288423934}
   m_CullTransparentMesh: 1
---- !u!114 &1288423939
+--- !u!114 &1288423938
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1307,6 +1308,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 373e0656a05eeab4a823e76e54b966a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1288423939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1288423934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5be1a8d1a649f343ba8587327850112, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1353546499
@@ -1825,7 +1838,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1288423939}
+      - m_Target: {fileID: 1288423938}
         m_TargetAssemblyTypeName: LevlMenu, Assembly-CSharp
         m_MethodName: PlayGame
         m_Mode: 1

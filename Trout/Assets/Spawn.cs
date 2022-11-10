@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawn : MonoBehaviour
 {
-    public GameObject Player;
+    public GameObject player;
     public Transform spawnPoint;
 
     void Start()
@@ -15,7 +15,7 @@ public class Spawn : MonoBehaviour
 
     void SpawnPlayer()
     {
-        Instantiate(Player, spawnPoint.transform.position, Quaternion.identity);
+        Instantiate(player, spawnPoint.transform.position, Quaternion.identity);
         
     }
 
