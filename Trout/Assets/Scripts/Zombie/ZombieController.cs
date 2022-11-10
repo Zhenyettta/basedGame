@@ -61,13 +61,19 @@ public class ZombieController : MonoBehaviour
     }
 
 
+    public float cooldown = 1f; //seconds
+    private float lastAttackedAt = -9999f;
 
     public void DealDamage()
     {
         if (Vector3.Distance(target.position, transform.position) <= 2)
-        { 
-             pcr.TakeDamageFromEnemy(zombie_damage);
+        {
+            if (Time.time > lastAttackedAt + cooldown)
+            {
 
+                pcr.TakeDamageFromEnemy(zombie_damage);
+                lastAttackedAt = Time.time;
+            }
         }
     }
 }
