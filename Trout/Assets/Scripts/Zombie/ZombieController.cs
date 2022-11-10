@@ -13,6 +13,9 @@ public class ZombieController : MonoBehaviour
     private int current_health;
     public int zombie_damage = 20;
 
+    public float cooldown = 1f; //seconds
+    private float lastAttackedAt = -9999f;
+
 
     PlayerController pcr = new PlayerController();
 
@@ -60,9 +63,6 @@ public class ZombieController : MonoBehaviour
         }
     }
 
-
-    public float cooldown = 1f; //seconds
-    private float lastAttackedAt = -9999f;
 
     public void DealDamage()
     {

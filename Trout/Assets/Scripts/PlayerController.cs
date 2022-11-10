@@ -133,9 +133,6 @@ public class PlayerController : MonoBehaviour
 
     public void TakeDamageFromEnemy(int damageFromEnemy)
     {
-        if (Time.time > lastAttackedAt + cooldown)
-        {
-            
         health -= damageFromEnemy;
 
         print("Hit"); //animation
@@ -145,8 +142,6 @@ public class PlayerController : MonoBehaviour
         {
             print("My DEAR you are Dead");
             isGameOver = true;
-        }
-            lastAttackedAt = Time.time;
         }
     }
     #endregion
