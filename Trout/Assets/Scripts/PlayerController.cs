@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     private float jumpControle = 0.75f;
 
-    public static int health = 100;
+    public int health = 100;
 
     [Header("is on the Ground")]
     public bool ground;
@@ -20,13 +20,10 @@ public class PlayerController : MonoBehaviour
     public static bool isGameOver;
 
 
-    private int current_health;
-
     public Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
-        current_health = health;
         isGameOver = false;
     }
 
@@ -131,36 +128,26 @@ public class PlayerController : MonoBehaviour
 
     #region Health update
 
+    public float cooldown = 1f; //seconds
+    private float lastAttackedAt = -9999f;
 
-    public void TakeDamage(int damage)
+    public void TakeDamageFromEnemy(int damageFromEnemy)
     {
-        current_health -= damage;
+        if (Time.time > lastAttackedAt + cooldown)
+        {
+            
+        health -= damageFromEnemy;
+
+        print("Hit"); //animation
         //sound
 
-        if (current_health <= 0)
+        if (health <= 0)
         {
             print("My DEAR you are Dead");
             isGameOver = true;
         }
+            lastAttackedAt = Time.time;
+        }
     }
     #endregion
-
-/*    float damageTime = 1.0f;
-
-    float currentDamageTime;
-
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.tag == "Zombie")
-        { 
-            currentDamageTime += Time.deltaTime;
-            if (currentDamageTime > damageTime)
-            {
-                current_health -= 10; ;
-                currentDamageTime = 0.0f;
-            }
-        }
-    }*/
-
-
 }

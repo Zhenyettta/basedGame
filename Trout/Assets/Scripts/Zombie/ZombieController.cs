@@ -20,9 +20,7 @@ public class ZombieController : MonoBehaviour
     {
         GetReferences();
         current_health = max_health;
-    
-
-       
+   
 
     }
     private void Update()
@@ -62,13 +60,24 @@ public class ZombieController : MonoBehaviour
         }
     }
 
+
+    public float attackRate = 2f;
+    float nextAttackTime = 0f;
+
     public void DealDamage()
     {
         if (Vector3.Distance(target.position, transform.position) <= 2)
         {
+            if (attackRate >= nextAttackTime)
+            {
+                pcr.TakeDamageFromEnemy(20);
+                nextAttackTime = Time.deltaTime * 5f;
+            }
+            else
+            {
+                nextAttackTime -= Time.deltaTime; /* if nextAttackTime is greater than the attackRate, subtract one from nextAttackTime. this only happens once per second because you use Time.deltaTime */
+            }
 
-            pcr.TakeDamage(1);
-           
         }
     }
 }
