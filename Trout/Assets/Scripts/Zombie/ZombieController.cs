@@ -12,15 +12,18 @@ public class ZombieController : MonoBehaviour
     public int max_health;
     private int current_health;
     public int zombie_damage = 20;
-
-
-    PlayerController pcr = new PlayerController();
+    
+      PlayerController pcr;
 
     private void Start()
     {
         GetReferences();
         current_health = max_health;
-   
+        
+        GameObject GO = new GameObject();
+        GO.AddComponent<PlayerController>();
+        pcr = GO.GetComponent<PlayerController>();
+
 
     }
     private void Update()
